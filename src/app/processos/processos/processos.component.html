@@ -21,7 +21,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let processo of processos | paginate: { itemsPerPage: 5, currentPage: paginaAtual }; let i = index">
+                <tr *ngFor="let processo of processos"> <!--| paginate: { itemsPerPage: 5, currentPage: paginaAtual }; let i = index-->
                     <td>{{ processo.id }}</td>
                     <td>{{ processo.numero }}</td>
                     <td>{{ processo.tipo }}</td>

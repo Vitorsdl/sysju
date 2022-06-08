@@ -10,7 +10,7 @@ import { HomeComponent } from './view/Home/home.component';
 import { AuthService } from './login/auth.service';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-//import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    //NgxPaginationModule
+    NgxPaginationModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
