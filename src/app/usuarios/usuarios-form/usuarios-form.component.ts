@@ -48,6 +48,7 @@ export class UsuariosFormComponent implements OnInit {
         error => { this.modal.showAlertDanger(msgError)}
       );
     }
+    console.log(this.formuser.value);
   }
 
   onCancel() {

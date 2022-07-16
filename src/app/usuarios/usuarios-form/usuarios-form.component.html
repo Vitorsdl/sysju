@@ -15,16 +15,20 @@
                     <input type="password" class="form-control" id="senha" formControlName="senha"
                         [ngClass]="{ 'is-invalid': submitted && hasError('senha')}" />
                 </div>
-            <div class="col-md-3 mb-3">
-                <label for="roles">Tipo</label>
+                <div class="col-md-3 mb-3">
+                    <div class="custom-control custom-switch" id="aling">
+                        <input type="checkbox" class="custom-control-input" id="roles" formControlName="roles">
+                        <label class="custom-control-label" for="roles">Administrador</label>
+                    </div>
+                    <!--<label for="roles">Tipo</label>
                 <select class="form-control" id="roles" formControlName="roles"
                     [ngClass]="{ 'is-invalid': submitted && hasError('roles')}">
                     <option value=""></option>
                     <option value="Usuario">Usuario</option>
                     <option value="Administrador">Administrador</option>
-                </select>
+                </select>-->
+                </div>
             </div>
-        </div>
             <div>
                 <button type="submit" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
                 <button type="button" class="btn btn-defaut" (click)="onCancel()">Cancelar</button>

@@ -1,29 +1,85 @@
-.container {
-    padding: 10px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.barra {
+    display: flex;
+    position: relative;
+}
+
+.barra .nav {
+    position: fixed;
+    width: 150px;
+    height: 100%;
+    background: #ebd21d;
+}
+
+.barra .nav ul li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 255, 0.05);
+}
+
+.barra .nav ul li a {
+    color: #000;
+    display: block;
+    text-decoration: none;
+}
+
+.barra .nav ul li:hover {
+    background: #f8df1e;
+}
+
+.barra .nav ul li:hover a {
+    color: #fff;
+}
+
+.barra .nav .user {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
     margin-bottom: 50px;
 }
 
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: right;
+.barra .nav .user a {
+    color: #000;
 }
 
-.card-header {
-    height: 45px;
-}
-
-.cor { 
-    background-color: #d9534f;
-}
-
-.btn {
-    padding: 0.2rem;
-    color: #f8f9fa;
+.container {
+    padding: 10px;
+    margin-bottom: 50px;
+    margin-left: 150px;
 }
 
 .dropdown-menu {
+    height: 30px;
+    width: 50px;
     min-width: 0;
     padding: 0;
+    text-align: center;
+}
+
+.assinatura {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    background: rgb(197, 197, 197);
+    width: 100%;
+    text-align: right;
+    height: 40px;
 }

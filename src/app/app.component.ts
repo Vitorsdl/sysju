@@ -10,13 +10,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'sysju';
 
-  //mostraMenu: boolean = false;
+  mostraMenu: boolean = false;
   //visiadv: boolean = false;
   //visiuser: boolean = false;
-
-  mostraMenu: boolean = false;
-  visiadv: boolean = false;
-  visiuser: boolean = false;
 
   login: string = '';
   roles: string = '';
@@ -28,7 +24,6 @@ export class AppComponent {
   ngOnInit() {
     this.authService.mostraMenu.subscribe(
       mostrar => this.mostraMenu = mostrar
-      //mostrar => this.mostraMenu = mostrar
     );
 
     this.authService.nlogin.subscribe(
@@ -42,8 +37,6 @@ export class AppComponent {
         if (dados === "Administrador") {
           //this.visiadv = true;
           //this.visiuser = true;
-          this.visiadv = true;
-          this.visiuser = true;
           environment.roles = true;
         }
       }

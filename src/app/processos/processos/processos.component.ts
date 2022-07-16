@@ -15,9 +15,7 @@ import { empty } from 'rxjs';
   styleUrls: ['./processos.component.css']
 })
 export class ProcessosComponent implements OnInit {
-
-  public paginaAtual = 1; //quando o componente carregar iniciara da pagina 1.
-
+  
   bsModalRef: BsModalRef;
   processos: Processo[];
   visiBt: boolean = false;

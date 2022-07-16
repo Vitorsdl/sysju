@@ -2,5 +2,6 @@ export interface Usuario {
     id: number;
     login: string;
     senha: string;
-    roles: string;
+    roles: boolean;
+    //roles: string;
 }
