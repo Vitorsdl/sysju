@@ -22,9 +22,9 @@ const routes: Routes = [
 //  {
 //    path: 'usuarios', loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule) //canActivate: [AuthGuard]
 //  },
- // {
-    //path: 'vistorias', loadChildren: () => import('./vistorias/visotiras.module').then(m =>m.Vistorias)
- // },
+  {
+    path: 'vistorias', loadChildren: () => import('./vistorias/vistorias.module').then(m =>m.VistoriasModule)
+  },
  // {
     //path: 'multas', loadChildren: () => import('./multas/multas.module').then(m =>m.Multas)
  // },
