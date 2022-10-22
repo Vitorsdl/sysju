@@ -1,1 +1,37 @@
-<p>vistorias works!</p>
+<div class="card">
+    <div class="card-header">
+        <div class="float-left">Registro</div>
+    </div>
+    <div class="float-right">
+        <button type="button" class="bnt btn-primary" > Adicionar registro</button><!--[routerLink]="['novo']"-->
+    </div>
+
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Estabelecimento</th>
+                    <th>Seguimento</th>
+                    <th>Localização</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--<tr *ngFor="let vistoria of vistorias"></tr>-->
+                <tr></tr><!--{{ vistoria.razaoSocial }}-->
+                <tr></tr><!--{{ vistoria.atividadeEconomica }}-->
+                <tr></tr><!--{{ vistoria.endereco }}-->
+                <tr></tr><!--{{ vistoria.statusVistoria }}-->
+                <tr>
+                    <span class="float-right">
+                        <button type="button" class="btn btn-outline-success mb-1 btn-sm" data-toggle="modal"
+                                data-target="#ModalInfo"><!--(click)="buscaDados()"-->
+                                Ficha
+                        </button>
+                    </span>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
