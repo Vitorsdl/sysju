@@ -1,0 +1,74 @@
+<div class="card">
+    <div class="card-header">
+        <div class="float-left">
+            <h4>Clientes</h4>
+        </div>
+        <div class="float-right">
+            <button type="button" class="btn btn-primary" [routerLink]="['novo']">Novo cliente</button>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Rg</th>
+                    <th>Cpf</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of clientes">
+                    <td>{{ cliente.id }}</td>
+                    <td>{{ cliente.nome }}</td>
+                    <td>{{ cliente.rg }}</td>
+                    <td>{{ cliente.cpf }}</td>
+                    <td>
+                        <span class="float-rigth">
+                            <!--<button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(cliente.id)">
+                                Vizualizar
+                            </button>-->
+                            <button type="button" class="btn btn-outline-warning mb-1 btn-sm" data-toggle="modal"
+                                data-target="#ModalInfo" (click)="buscaDados(cliente.id, cliente.nome, cliente.rg, cliente.cpf, cliente.sexo, cliente.telefone, cliente.email, cliente.endereco, cliente.tipoPessoa)">
+                                Visualizar
+                            </button>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Modal de informações-->
+
+    <div class="modal fade" id="ModalInfo" tabindex="-1" role="dialog" aria-labelledby="ModalInfoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalInfoLabel">Informações cliente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Nome: {{ _nome }}<p>
+                    Rg: {{ _rg }}<p>
+                    Cpf: {{ _cpf }}<p>
+                    Sexo: {{ _sexo }}<p>
+                    Telefone: {{ _telefone }}<p>
+                    Email: {{ _email }}<p>
+                    Endereço: {{ _endereco }} <p>
+                    Tipo pessoa: {{ _tipoPessoa }}
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>-->
+                    <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(_id)" data-dismiss="modal">Editar</button>
+                    <button *ngIf="visiBt" class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(_id)" data-dismiss="modal">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--fim-->
+</div>

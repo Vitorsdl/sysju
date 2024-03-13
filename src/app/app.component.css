@@ -1,0 +1,29 @@
+.container {
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.card-header {
+    height: 45px;
+}
+
+.cor { 
+    background-color: #d9534f;
+}
+
+.btn {
+    padding: 0.2rem;
+    color: #f8f9fa;
+}
+
+.dropdown-menu {
+    min-width: 0;
+    padding: 0;
+}

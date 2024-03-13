@@ -1,0 +1,69 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Cadastro de cliente</h5>
+    </div>
+    <div class="card-body">
+        <form class="needs-validation" novalidate [formGroup]="formcli">
+            <div class="form-row">
+                <div class="col-md-5 mb-3">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" formControlName="nome"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('nome')}" />
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="rg">RG</label>
+                    <input type="text" class="form-control" id="rg" formControlName="rg"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('rg') }" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="cpf">CPF</label>
+                    <input type="text" class="form-control" id="cpf" formControlName="cpf"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('cpf') }" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2 mb-3">
+                    <label for="sexo">Sexo</label>
+                    <select class="form-control" id="sexo" formControlName="sexo"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('sexo')}">
+                        <option value=""></option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" formControlName="email"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('email') }" />
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" class="form-control" id="telefone" formControlName="telefone"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('telefone') }" />
+                </div>
+                <div class="col-md-2 mb-3">
+                    <label for="tipoPessoa">Tipo de pessoa</label>
+                    <select class="form-control" id="tipoPessoa" formControlName="tipoPessoa"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('tipoPessoa')}">
+                        <option value=""></option>
+                        <option value="fisica">Fisica</option>
+                        <option value="juridica">Juridica</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-3 mb-3">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" id="endereco" formControlName="endereco"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('endereco') }" />
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+                <button type="button" class="btn btn-defaut" (click)="onCancel()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

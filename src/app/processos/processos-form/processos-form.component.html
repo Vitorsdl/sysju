@@ -1,0 +1,69 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Cadastro de processo</h5>
+    </div>
+    <div class="card-body">
+        <form class="needs-validation" novalidate [formGroup]="formproc">
+            <div class="form-row">
+                <div class="col-md-2 mb-3">
+                    <label for="numero">Numero</label>
+                    <input type="text" class="form-control" id="numero" formControlName="numero"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('numero') }" />
+                    <!--<div class="Invalid-feedback" *ngIf="hasError && hasError('numero')['required']">
+                        Campo vazio!
+                    </div>-->
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="tipo">Tipo</label>
+                    <input type="text" class="form-control" id="tipo" formControlName="tipo"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('tipo') }" />
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="procedimento">Ação do Processo</label>
+                    <input type="text" class="form-control" id="procedimento" formControlName="procedimento"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('procedimento') }" />
+                </div>
+                <div class="col-md-4 mb-3" formGroupName="comarca">
+                    <label for="comarca">Comarca</label>
+                    <select class="form-control" id="comarca" formControlName="id"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('comarca')}">
+                        <option value=""></option>
+                        <option value="{{ comarca.id }}" *ngFor="let comarca of comarcas">{{ comarca.comarca }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-3 mb-3" formGroupName="cliente">
+                    <label for="cliente">Cliente</label>
+                    <select class="form-control" id="cliente" formControlName="id"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('cliente') }">
+                        <option value=""></option>
+                        <option value="{{ cliente.id }}" *ngFor="let cliente of clientes">{{ cliente.nome }}</option>
+                    </select>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <label for="vara">Vara</label>
+                    <input type="text" class="form-control" id="vara" formControlName="vara"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('vara') }" />
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="resultadoRecurso">Resultado do recurso</label>
+                    <input type="text" class="form-control" id="resultadoRecurso" formControlName="resultadoRecurso"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('resultadoRecurso') }" />
+                </div>
+                <div class="col-md-3 mb-3" formGroupName="advogado">
+                    <label for="advogado">Advogado</label>
+                    <select class="form-control" id="advogado" formControlName="id"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('advogado')}">
+                        <option value=""></option>
+                        <option value="{{ advogado.id }}" *ngFor="let advogado of advogados">{{ advogado.nome }}</option>
+                    </select>
+                </div>
+            </div>
+            <div style="margin-top: 10px">
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+                <button type="button" class="btn btn-defaut" (click)="onCancel()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
