@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+        <div class="float-left">
+            <h4>Usuarios</h4>
+        </div>
+        <div class="float-right">
+            <button type="button" class="btn btn-primary" [routerLink]="['novo']">Novo usuario</button>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>login</th>
+                    <th>Tipo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of usuarios">
+                    
+                    <td>{{ usuario.login }}</td>
+                    <td>{{ usuario.roles }}</td>
+                    <td>
+                        <span class="float-rigth">
+                            <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(usuario.login)">
+                                Excluir
+                            </button>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

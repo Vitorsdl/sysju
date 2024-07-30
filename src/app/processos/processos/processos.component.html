@@ -1,0 +1,75 @@
+<div class="card">
+    <div class="card-header">
+        <div class="float-left">
+            <h4>Processos</h4>
+        </div>
+        <div class="float-right">
+            <button type="button" class="btn btn-primary" [routerLink]="['novo']">Novo processo</button>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Numero</th>
+                    <th>Tipo</th>
+                    <th>Ação Processo</th>
+                    <th>Comarca</th>
+                    <th>Cliente</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let processo of processos"> <!--| paginate: { itemsPerPage: 5, currentPage: paginaAtual }; let i = index-->
+                    <td>{{ processo.id }}</td>
+                    <td>{{ processo.numero }}</td>
+                    <td>{{ processo.tipo }}</td>
+                    <td>{{ processo.procedimento }}</td>
+                    <td>{{ processo.comarca.comarca }}</td>
+                    <td>{{ processo.cliente.nome }}</td>
+                    <td>
+                        <span class="float-rigth">
+                            <button type="button" class="btn btn-outline-warning mb-1 btn-sm" data-toggle="modal"
+                                data-target="#ModalInfo" (click)="buscaDados(processo.id, processo.numero,  processo.tipo, processo.procedimento, processo.comarca.comarca, processo.vara, processo.resultadoRecurso, processo.cliente.nome, processo.advogado.nome)">
+                                Visualizar
+                            </button>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+            <!--<pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>-->
+        </table>
+    </div>
+
+    <!--Modal de informações-->
+
+    <div class="modal fade" id="ModalInfo" tabindex="-1" role="dialog" aria-labelledby="ModalInfoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalInfoLabel">Informações do processo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <b>N° do processo: </b>{{ _numero }}<p>
+                    Tipo: {{ _tipo }}<p>
+                    Procedimetno: {{ _procedimento }}<p>
+                    Comarca: {{ _comarca }}<p>
+                    Vara: {{ _vara }}<p>
+                    Resultado do recurso: {{ _resultadoRecurso }}<p>
+                    Cliente: {{ _cliente }} <p>
+                    Advogado: {{ _advogado }}
+                </div>
+                <div class="modal-footer">                    
+                    <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEdit(_id)" data-dismiss="modal">Editar</button>
+                    <button *ngIf="visiBt" class="btn btn-outline-danger mb-1 btn-sm" (click)="onDelete(_id)" data-dismiss="modal">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--fim-->
+</div>

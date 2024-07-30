@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Cadastro de cliente</h5>
+    </div>
+    <div class="card-body">
+        <form class="needs-validation" novalidate [formGroup]="formevent">
+            <div class="form-row">
+                <div class="col-md-3 mb-3">
+                    <label for="tipo">Tipo</label>
+                    <input type="text" class="form-control" id="tipo" formControlName="tipo"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('tipo')}" />
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="dataHora">Data</label>
+                    <input type="date" class="form-control" id="dataHora" formControlName="dataHora"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('dataHora') }" />
+                </div>
+
+                <div class="col-md-5 mb-3">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" class="form-control" id="descricao" formControlName="descricao"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('descricao') }" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-2 mb-3">
+                    <label for="status">Status</label>
+                    <select class="form-control" id="status" formControlName="status"
+                        [ngClass]="{ 'is-invalid': submitted && hasError('status')}">
+                        <option value=""></option>
+                        <option value="ativo">Ativo</option>
+                        <option value="concluido">Concluido</option>
+                    </select>
+                </div>
+                </div>
+                <div>
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+                <button type="button" class="btn btn-defaut" (click)="onCancel()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
